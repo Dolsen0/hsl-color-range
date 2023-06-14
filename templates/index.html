@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    My Color Picker
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <h2>Welcome to the Color Picker!</h2>
+    <p>Select your starting hue and number of steps:</p>
+    
+    <form action="/" method="post">
+        <label for="hueStart">Hue Start:</label><br>
+        <input type="number" id="hueStart" name="hueStart" min="0" max="255"><br>
+        <label for="steps">Steps:</label><br>
+        <input type="number" id="steps" name="steps" min="1"><br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% if colors %}
+        <h3>Generated Colors:</h3>
+        <div class="color-container">
+            {% for color in colors %}
+                <div class="color-card" style="background-color: {{ color }};">
+                    <p>{{ color }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
