@@ -8,6 +8,7 @@ packages = [{include = "hsl_selector"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
+flask = "^2.3.2"
 
 
 [build-system]
